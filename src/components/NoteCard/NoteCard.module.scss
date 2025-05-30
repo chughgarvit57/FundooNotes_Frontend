@@ -1,0 +1,153 @@
+.noteCard {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+  transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  position: relative;
+  background-color: inherit;
+  width: 240px;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 150px;
+
+  &:hover {
+    box-shadow: 0 1px 3px 0 rgba(60, 64, 67, 0.3), 0 4px 8px 3px rgba(60, 64, 67, 0.15);
+  }
+
+  &.pinnedNote {
+    border: 5px solid #fbbc04;
+    background-color: #fff8e1;
+    box-shadow: 0 2px 4px 0 rgba(60, 64, 67, 0.4), 0 2px 6px 2px rgba(60, 64, 67, 0.2);
+  }
+}
+
+.noteContent {
+  flex-grow: 1;
+  word-break: break-word;
+}
+
+.noteTitle {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0 0 8px 0;
+  color: #202124;
+  line-height: 1.4;
+}
+
+.noteText {
+  font-size: 0.875rem;
+  margin: 0;
+  color: #202124;
+  line-height: 1.5;
+}
+
+.noteActions {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 8px;
+  margin-top: auto;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  .noteCard:hover &,
+  .noteCard:has(.colorPalette) &,
+  .noteCard:has(.editInput) & {
+    opacity: 1;
+  }
+}
+
+.actionButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: rgba(95, 99, 104, 0.1);
+  }
+
+  &.pinned {
+    background-color: rgba(95, 99, 104, 0.2);
+  }
+}
+
+.colorPalette {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: flex;
+  gap: 8px;
+  background: #fff;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+  z-index: 10;
+
+  &.editModePalette {
+    bottom: -56px;
+  }
+}
+
+.colorOption {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:focus {
+    outline: 2px solid #1a73e8;
+  }
+}
+
+.editInput {
+  width: 100%;
+  padding: 8px 0;
+  margin-bottom: 8px;
+  border: none;
+  background: transparent;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #202124;
+  line-height: 1.4;
+
+  &::placeholder {
+    color: #5f6368;
+    opacity: 0.7;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.editTextarea {
+  width: 100%;
+  padding: 8px 0;
+  margin-bottom: 8px;
+  border: none;
+  background: transparent;
+  font-size: 0.875rem;
+  color: #202124;
+  line-height: 1.5;
+  resize: none;
+  min-height: 80px;
+
+  &::placeholder {
+    color: #5f6368;
+    opacity: 0.7;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

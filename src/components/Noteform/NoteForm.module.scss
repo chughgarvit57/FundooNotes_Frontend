@@ -1,0 +1,167 @@
+.noteInputWrapper {
+  border-radius: 8px;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
+              0 1px 3px 1px rgba(60, 64, 67, 0.15);
+  transition: box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  cursor: text;
+  position: relative;
+
+  &:hover {
+    box-shadow: 0 1px 3px 0 rgba(60, 64, 67, 0.3),
+                0 4px 8px 3px rgba(60, 64, 67, 0.15);
+  }
+  width: 100%;
+}
+
+.collapsedInput {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #202124;
+  background: transparent;
+  border-radius: 8px;
+  cursor: text;
+
+  &::placeholder {
+    color: #5f6368;
+  }
+}
+
+.expandedInputBox {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 16px;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.noteTitle {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 4px 0;
+  font-size: 16px;
+  line-height: 24px;
+  color: #202124;
+  font-weight: 500;
+  background: transparent;
+
+  &::placeholder {
+    color: #5f6368;
+  }
+}
+
+.noteDescription {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 4px 0;
+  font-size: 14px;
+  line-height: 22px;
+  color: #202124;
+  background: transparent;
+  resize: none;
+  min-height: 60px;
+  margin-top: 8px;
+
+  &::placeholder {
+    color: #5f6368;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.actions .leftContainerActions{
+  display: flex;
+  gap: 5rem;
+}
+
+.actionButton {
+  background: none;
+  border: none;
+  color: #202124;
+  font-size: 16px;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: #f1f3f4;
+  }
+}
+
+.pinButton {
+  background: none;
+  border: none;
+  color: #202124;
+  font-size: 20px;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 4px;
+
+  &:hover {
+    background: #f1f3f4;
+  }
+
+  &.pinned {
+    color: #6200ea;
+  }
+}
+
+.colorPalette {
+  position: absolute;
+  top: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.colorSwatch {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid #e0e0e0;
+
+  &:hover {
+    border-color: #202124;
+    transform: scale(1.1);
+  }
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  color: #202124;
+  font-size: 14px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 4px;
+
+  &:hover {
+    background: #f1f3f4;
+  }
+}
